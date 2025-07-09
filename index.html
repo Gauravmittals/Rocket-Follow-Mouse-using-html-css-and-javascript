@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket Follow Mouse</title>
+    <style>
+      body {
+        margin: 0;
+
+        background: #111; /* dark background */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+      }
+
+      .my-div {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        transition: 0.1s ease-out;
+      }
+      .my-div img {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-div">
+      <img src="rocket.png" />
+    </div>
+    <script>
+      let myDiv = document.querySelector(".my-div");
+      document.addEventListener("mousemove", (e) => {
+        move(e);
+      });
+      const move = (e) => {
+        var x = e.pageX;
+        var y = e.pageY;
+        myDiv.style.left = x - 100 + "px";
+        myDiv.style.top = y - 100 + "px";
+      };
+    </script>
+  </body>
+</html>
